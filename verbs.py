@@ -7,7 +7,6 @@ ichidan_verbs = [
 ]
 
 godan_verbs = [
-    "行く",
     "言う",
     "書く",
     "泳ぐ",

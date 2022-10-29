@@ -26,11 +26,14 @@ class IchidanVerb:
     def masen(self):
         return self.removeLastThenAdd(self.verb, "ません")
 
-#
+    def past(self):
+        return self.removeLastThenAdd(self.verb, "た")
+
+    def negative_past(self):
+        return self.removeLastThenAdd(self.verb, "なかった")
+    
 #    def mashita(self):
 #         return removeLastThenAdd(self.verb, "ました")
-#    def past(self):
-#        return removeLastThenAdd(self.verb, "た")
 
 class GodanVerb:
 
@@ -87,5 +90,42 @@ class GodanVerb:
         }
         end = masuLUT[self.verb[-1]] + "ません"
         return self.verb[:-1]+end
-        
 
+    def past(self):
+    
+        pastLUT = {
+            "う":"っ",
+            "く":"い",
+            "ぐ":"い",
+            "す":"し",
+            "つ":"っ",
+            "ぬ":"ん",
+            "む":"ん"
+        }
+        
+        taLUT = {
+            "う":"た",
+            "く":"た",
+            "ぐ":"だ",
+            "す":"た",
+            "つ":"た",
+            "ぬ":"だ",
+            "む":"だ"            
+        }
+        end = pastLUT[self.verb[-1]] + taLUT[self.verb[-1]]
+        return self.verb[:-1]+end
+        
+    def negative_past(self):
+        
+        pastLUT = {
+            "う":"わ",
+            "く":"か",
+            "ぐ":"が",
+            "す":"さ",
+            "つ":"た",
+            "ぬ":"な",
+            "む":"ま"
+        }
+        
+        end = pastLUT[self.verb[-1]] + "なかった"
+        return self.verb[:-1] + end
