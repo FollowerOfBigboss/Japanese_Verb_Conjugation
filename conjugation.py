@@ -8,30 +8,24 @@ from verbs import ichidan_verbs, godan_verbs
 
 class IchidanVerb:
     
-    def removeLastThenAdd(self, word, suffix):
-        return word[:-1]+suffix
+    def removeLastThenAdd(self, word, suffix): return word[:-1]+suffix
 
-    def __init__(self, dictionary_form):
-        self.verb = dictionary_form
+    def __init__(self, dictionary_form): self.verb = dictionary_form
 
-    def plain(self):
-        return self.verb
+    def plain(self): return self.verb
     
-    def plain_negative(self):
-        return self.removeLastThenAdd(self.verb, "ない")
+    def plain_negative(self): return self.removeLastThenAdd(self.verb, "ない")
 
-    def masu(self):
-        return self.removeLastThenAdd(self.verb, "ます")
+    def masu(self): return self.removeLastThenAdd(self.verb, "ます")
         
-    def masen(self):
-        return self.removeLastThenAdd(self.verb, "ません")
+    def masen(self): return self.removeLastThenAdd(self.verb, "ません")
 
-    def past(self):
-        return self.removeLastThenAdd(self.verb, "た")
+    def past(self): return self.removeLastThenAdd(self.verb, "た")
 
-    def negative_past(self):
-        return self.removeLastThenAdd(self.verb, "なかった")
+    def negative_past(self): return self.removeLastThenAdd(self.verb, "なかった")
     
+    def te(self): return self.removeLastThenAdd(self.verb, "て")
+        
 #    def mashita(self):
 #         return removeLastThenAdd(self.verb, "ました")
 
@@ -128,4 +122,29 @@ class GodanVerb:
         }
         
         end = pastLUT[self.verb[-1]] + "なかった"
+        return self.verb[:-1] + end
+        
+        
+    def te(self):
+        teLUT = {
+            "う":"っ",
+            "く":"い",
+            "ぐ":"い",
+            "す":"し",
+            "つ":"っ",
+            "ぬ":"ん",
+            "む":"ん" 
+        }
+        
+        deLUT = {
+            "う":"て",
+            "く":"て",
+            "ぐ":"で",
+            "す": "て",
+            "つ":"て",
+            "ぬ":"で",
+            "む":"で" 
+        }
+        
+        end = teLUT[self.verb[-1]] + deLUT[self.verb[-1]]
         return self.verb[:-1] + end

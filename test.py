@@ -12,6 +12,7 @@ def TestGodan():
         print(f"masen form {godan.masen()}")
         print(f"past form {godan.past()}")
         print(f"negative past form {godan.negative_past()}")
+        print(f"Te form: {godan.te()}")        
         print()
 
 def TestIchidan():
@@ -20,10 +21,11 @@ def TestIchidan():
         print(f"Dictionary form: {i}")
         print(f"Plain form {ichidan.plain()}")
         print(f"Plain negative form {ichidan.plain_negative()}")
-        print(f"masu form {ichidan.masu()}")
-        print(f"masen form {ichidan.masen()}")
-        print(f"past form {ichidan.past()}")
-        print(f"negative past form {ichidan.negative_past()}")
+        print(f"Masu form {ichidan.masu()}")
+        print(f"Masen form {ichidan.masen()}")
+        print(f"Past form {ichidan.past()}")
+        print(f"Negative past form {ichidan.negative_past()}")
+        print(f"Te form: {ichidan.te()}")
         print()
 
 def banner(text):
