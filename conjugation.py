@@ -26,6 +26,8 @@ class IchidanVerb:
     
     def te(self): return self.removeLastThenAdd(self.verb, "て")
         
+    def negative_te_nakute(self): return self.removeLastThenAdd(self.verb, "なくて")
+    
 #    def mashita(self):
 #         return removeLastThenAdd(self.verb, "ました")
 
@@ -124,7 +126,6 @@ class GodanVerb:
         end = pastLUT[self.verb[-1]] + "なかった"
         return self.verb[:-1] + end
         
-        
     def te(self):
         teLUT = {
             "う":"っ",
@@ -147,4 +148,18 @@ class GodanVerb:
         }
         
         end = teLUT[self.verb[-1]] + deLUT[self.verb[-1]]
+        return self.verb[:-1] + end
+         
+    def negative_te_nakute(self):
+        teLUT = {
+            "う":"わ",
+            "く":"か",
+            "ぐ":"が",
+            "す":"し",
+            "つ":"た",
+            "ぬ":"な",
+            "む":"ま" 
+        }
+        
+        end = teLUT[self.verb[-1]] + "なくて"
         return self.verb[:-1] + end
