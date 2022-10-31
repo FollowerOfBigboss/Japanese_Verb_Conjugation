@@ -8,26 +8,45 @@ from verbs import ichidan_verbs, godan_verbs
 
 class IchidanVerb:
     
-    def removeLastThenAdd(self, word, suffix): return word[:-1]+suffix
+    def removeLastThenAdd(self, suffix): 
+        return self.verb[:-1] + suffix
 
-    def __init__(self, dictionary_form): self.verb = dictionary_form
+    def __init__(self, dictionary_form): 
+        self.verb = dictionary_form
 
-    def plain(self): return self.verb
+    def plain(self): 
+        return self.verb
     
-    def plain_negative(self): return self.removeLastThenAdd(self.verb, "ない")
+    def plain_negative(self): 
+        return self.removeLastThenAdd("ない")
 
-    def masu(self): return self.removeLastThenAdd(self.verb, "ます")
+    def masu(self): 
+        return self.removeLastThenAdd("ます")
         
-    def masen(self): return self.removeLastThenAdd(self.verb, "ません")
+    def masen(self): 
+        return self.removeLastThenAdd("ません")
 
-    def past(self): return self.removeLastThenAdd(self.verb, "た")
+    def past(self): 
+        return self.removeLastThenAdd("た")
 
-    def negative_past(self): return self.removeLastThenAdd(self.verb, "なかった")
+    def negative_past(self): 
+        return self.removeLastThenAdd("なかった")
     
-    def te(self): return self.removeLastThenAdd(self.verb, "て")
+    def mashita(self):
+        return self.removeLastThenAdd("ました")
+    
+    def masendeshita(self):
+        return self.removeLastThenAdd("ませんでした")
+    
+    def te(self): 
+        return self.removeLastThenAdd("て")
         
-    def negative_te_nakute(self): return self.removeLastThenAdd(self.verb, "なくて")
+    def negative_te_nakute(self): 
+        return self.removeLastThenAdd("なくて")
     
+    def negative_te_naide(self): 
+        return self.removeLastThenAdd("ないで")
+
 #    def mashita(self):
 #         return removeLastThenAdd(self.verb, "ました")
 
@@ -126,6 +145,35 @@ class GodanVerb:
         end = pastLUT[self.verb[-1]] + "なかった"
         return self.verb[:-1] + end
         
+    def mashita(self):
+        pastLUT = {
+            "う":"い",
+            "く":"き",
+            "ぐ":"ぎ",
+            "す":"し",
+            "つ":"ち",
+            "ぬ":"に",
+            "む":"み"
+        }
+        
+        end = pastLUT[self.verb[-1]] + "ました"
+        return self.verb[:-1] + end    
+    
+    def masendeshita(self):
+        pastLUT = {
+            "う":"い",
+            "く":"き",
+            "ぐ":"ぎ",
+            "す":"し",
+            "つ":"ち",
+            "ぬ":"に",
+            "む":"み"
+        }
+        
+        end = pastLUT[self.verb[-1]] + "ませんでした"
+        return self.verb[:-1] + end    
+    
+    
     def te(self):
         teLUT = {
             "う":"っ",
@@ -162,4 +210,18 @@ class GodanVerb:
         }
         
         end = teLUT[self.verb[-1]] + "なくて"
+        return self.verb[:-1] + end
+        
+    def negative_te_naide(self):
+        teLUT = {
+            "う":"わ",
+            "く":"か",
+            "ぐ":"が",
+            "す":"さ",
+            "つ":"た",
+            "ぬ":"な",
+            "む":"ま" 
+        }
+        
+        end = teLUT[self.verb[-1]] + "ないで"
         return self.verb[:-1] + end

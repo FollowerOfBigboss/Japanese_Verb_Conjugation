@@ -12,8 +12,11 @@ def TestGodan():
         print(f"Masen form {godan.masen()}")
         print(f"Past form {godan.past()}")
         print(f"Negative past form {godan.negative_past()}")
-        print(f"Te form: {godan.te()}")        
+        print(f"Mashita form {godan.mashita()}")
+        print(f"Masendeshita form {godan.masendeshita()}")
+        print(f"Te form: {godan.te()}")
         print(f"Negative Te Form(Nakute): {godan.negative_te_nakute()}")
+        print(f"Negative Te Form(Naide): {godan.negative_te_naide()}")
         print()
 
 def TestIchidan():
@@ -26,8 +29,11 @@ def TestIchidan():
         print(f"Masen form {ichidan.masen()}")
         print(f"Past form {ichidan.past()}")
         print(f"Negative past form {ichidan.negative_past()}")
+        print(f"Mashita form {ichidan.mashita()}")
+        print(f"Masendeshita form {ichidan.masendeshita()}")
         print(f"Te form: {ichidan.te()}")
-        print(f"Negative Te Form(Nakute): {ichidan.negative_te_nakute()}")        
+        print(f"Negative Te Form(Nakute): {ichidan.negative_te_nakute()}")
+        print(f"Negative Te Form(Naide): {ichidan.negative_te_naide()}")        
         print()
 
 def banner(text):
@@ -44,7 +50,6 @@ def banner(text):
 
 
 if __name__ == "__main__":
-    banner("hi")    
     banner("Testing godan verbs...")
     TestGodan()
     banner("Testing ichidan verbs...")
