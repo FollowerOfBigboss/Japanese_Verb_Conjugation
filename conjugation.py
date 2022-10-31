@@ -47,8 +47,6 @@ class IchidanVerb:
     def negative_te_naide(self): 
         return self.removeLastThenAdd("ないで")
 
-#    def mashita(self):
-#         return removeLastThenAdd(self.verb, "ました")
 
 class GodanVerb:
 
