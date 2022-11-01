@@ -1,7 +1,8 @@
 # 28/10/2022
 # Add plain and plain negative form
-# (TODO) polite form 
-
+# Add te form
+# Add polite forms for some conjugations
+# Add past form
 
 
 from verbs import ichidan_verbs, godan_verbs
@@ -47,6 +48,17 @@ class IchidanVerb:
     def negative_te_naide(self): 
         return self.removeLastThenAdd("ないで")
 
+    def te_mashite(self):
+        return self.removeLastThenAdd("まして")
+
+    # Use it as reference only
+    # Used rarely as far as I understand
+    # Not worth to add tests
+    def te_masende(self):
+        return self.removeLastThenAdd("ませんで")
+    
+    def progressive(self):
+        return self.removeLastThenAdd("ている")
 
 class GodanVerb:
 
@@ -171,7 +183,6 @@ class GodanVerb:
         end = pastLUT[self.verb[-1]] + "ませんでした"
         return self.verb[:-1] + end    
     
-    
     def te(self):
         teLUT = {
             "う":"っ",
@@ -223,3 +234,30 @@ class GodanVerb:
         
         end = teLUT[self.verb[-1]] + "ないで"
         return self.verb[:-1] + end
+
+    def te_mashite(self):
+        teLUT = {
+            "う":"い",
+            "く":"き",
+            "ぐ":"ぎ",
+            "す":"し",
+            "つ":"ち",
+            "ぬ":"に",
+            "む":"み" 
+        }
+        
+        end = teLUT[self.verb[-1]] + "まして"
+        return self.verb[:-1] + end
+
+    # Use it as reference only
+    # Used rarely as far as I understand
+    # Not worth to add tests
+    # Implementation is not expected
+    def te_masende(self):
+        return None
+    
+    # TODO: Implement later
+    def progressive(self):
+        return None
+        
+    
