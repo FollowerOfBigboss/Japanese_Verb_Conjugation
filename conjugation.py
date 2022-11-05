@@ -258,6 +258,6 @@ class GodanVerb:
     
     # TODO: Implement later
     def progressive(self):
-        return None
+        return self.te() + "いる"
         
     
