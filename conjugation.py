@@ -59,6 +59,9 @@ class IchidanVerb:
     
     def progressive(self):
         return self.removeLastThenAdd("ている")
+        
+    def volitional(self):
+        return self.removeLastThenAdd("よう")
 
 class GodanVerb:
 
