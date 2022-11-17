@@ -259,8 +259,19 @@ class GodanVerb:
     def te_masende(self):
         return None
     
-    # TODO: Implement later
     def progressive(self):
         return self.te() + "いる"
         
-    
+    def volitional(self):
+        volLUI = {
+            "う":"お",
+            "く":"こ",
+            "ぐ":"ご",
+            "す":"そ",
+            "つ":"と",
+            "ぬ":"の",
+            "む":"も" 
+        }
+        
+        end = volLUI[self.verb[-1]] + "う"
+        return self.verb[:-1] + end

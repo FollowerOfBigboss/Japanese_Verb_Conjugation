@@ -19,6 +19,8 @@ def TestGodan():
         print(f"Negative Te Form(Naide): {godan.negative_te_naide()}")
         print(f"Temashite form {godan.te_mashite()}")
         print(f"Progressive form {godan.progressive()}")
+        print(f"Volitional form {godan.volitional()}")
+
         print()
 
 def TestIchidan():
@@ -38,6 +40,8 @@ def TestIchidan():
         print(f"Negative Te Form(Naide): {ichidan.negative_te_naide()}")
         print(f"Temashite form {ichidan.te_mashite()}")
         print(f"Progressive form {ichidan.progressive()}")
+        print(f"Volitional form {ichidan.volitional()}")
+
         print()
 
 def banner(text):
