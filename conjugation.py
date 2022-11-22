@@ -62,6 +62,9 @@ class IchidanVerb:
         
     def volitional(self):
         return self.removeLastThenAdd("よう")
+        
+    def imperative(self):
+        return self.removeLastThenAdd("ろ")
 
 class GodanVerb:
 
@@ -275,3 +278,6 @@ class GodanVerb:
         
         end = volLUI[self.verb[-1]] + "う"
         return self.verb[:-1] + end
+        
+    def imperative(self):
+        return "Not implemented!"

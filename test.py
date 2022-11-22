@@ -20,6 +20,7 @@ def TestGodan():
         print(f"Temashite form {godan.te_mashite()}")
         print(f"Progressive form {godan.progressive()}")
         print(f"Volitional form {godan.volitional()}")
+        print(f"Imperative form {godan.imperative()}")
 
         print()
 
@@ -41,7 +42,8 @@ def TestIchidan():
         print(f"Temashite form {ichidan.te_mashite()}")
         print(f"Progressive form {ichidan.progressive()}")
         print(f"Volitional form {ichidan.volitional()}")
-
+        print(f"Imperative form {ichidan.imperative()}")
+        
         print()
 
 def banner(text):
