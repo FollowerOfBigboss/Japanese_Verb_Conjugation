@@ -21,6 +21,7 @@ def TestGodan():
         print(f"Progressive form {godan.progressive()}")
         print(f"Volitional form {godan.volitional()}")
         print(f"Imperative form {godan.imperative()}")
+        print(f"Request form {godan.request()}")
 
         print()
 
@@ -43,6 +44,7 @@ def TestIchidan():
         print(f"Progressive form {ichidan.progressive()}")
         print(f"Volitional form {ichidan.volitional()}")
         print(f"Imperative form {ichidan.imperative()}")
+        print(f"Request form {ichidan.request()}")
         
         print()
 

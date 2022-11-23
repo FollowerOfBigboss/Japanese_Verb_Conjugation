@@ -66,6 +66,10 @@ class IchidanVerb:
     def imperative(self):
         return self.removeLastThenAdd("ろ")
 
+    def request(self):
+        end = self.te() + "ください"
+        return end
+    
 class GodanVerb:
 
     def __init__(self, dictionary_form):
@@ -280,4 +284,7 @@ class GodanVerb:
         return self.verb[:-1] + end
         
     def imperative(self):
+        return "Not implemented!"
+        
+    def request(self):
         return "Not implemented!"
